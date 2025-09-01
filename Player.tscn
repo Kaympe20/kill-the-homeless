@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt61melwu1bf2"]
+
+[ext_resource type="Texture2D" uid="uid://dkoqub3qf4hno" path="res://assets/image-removebg-preview.png" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://bpn63ykontkc5" path="res://player.gd" id="1_kpjcp"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.498462, 0.5)
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(0.633839, 0.616636)
+texture = ExtResource("1_f50pn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(59, -28, 36, 18, 41, 43, 110, 78, 119, 128, -124, 127, -109, 96, -104, 72, -38, 49, -34, 31, -50, 18, -53, -27, -55, -72, -31, -115, 25, -121, 54, -98, 62, -51)
+
+[node name="Camera2D" type="Camera2D" parent="."]

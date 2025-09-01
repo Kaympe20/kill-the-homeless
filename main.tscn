@@ -1,5 +1,71 @@
-[gd_scene format=3 uid="uid://bb6d58q7x7mp1"]
+[gd_scene load_steps=4 format=3 uid="uid://bb6d58q7x7mp1"]
+
+[ext_resource type="Script" uid="uid://bp5ve2s2mmdc5" path="res://main_menu.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bqu8fx7eiyaiw" path="res://level_container.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cha6e40vtdy3y" path="res://assets/kill-the-homeless.png" id="1_ig7tw"]
 
 [node name="main" type="Node"]
 
 [node name="levelContainer" type="Node2D" parent="."]
+script = ExtResource("1_h2yge")
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="mainMenu" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="TextureRect" type="TextureRect" parent="ui/mainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig7tw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/mainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 231.0
+offset_right = -1575.0
+offset_bottom = -557.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="ui/mainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="ui/mainMenu/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.5
+offset_right = 43.5
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "Start"
+
+[node name="Control2" type="Control" parent="ui/mainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ui/mainMenu/VBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = -231.0
+offset_right = 135.0
+offset_bottom = -186.0
+text = "Quit"
+
+[connection signal="pressed" from="ui/mainMenu/VBoxContainer/Control/Button" to="ui/mainMenu" method="_on_start_button_pressed"]
+[connection signal="pressed" from="ui/mainMenu/VBoxContainer/Control2/Button" to="ui/mainMenu" method="_on_quit_button_pressed"]

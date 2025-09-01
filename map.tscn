@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0f3y74eb2ig1"]
+
+[ext_resource type="Texture2D" uid="uid://lgciqh3osl6i" path="res://assets/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg.webp" id="1_wijl4"]
+[ext_resource type="PackedScene" uid="uid://dt61melwu1bf2" path="res://Player.tscn" id="2_e0an3"]
+[ext_resource type="Texture2D" uid="uid://f4r6gxxy3kpv" path="res://assets/image-removebg-preview (1).png" id="3_urblq"]
+[ext_resource type="Texture2D" uid="uid://dlqjnnbg6vir5" path="res://assets/image-removebg-preview (2).png" id="4_iw27f"]
+[ext_resource type="Texture2D" uid="uid://buevsfs3la37v" path="res://assets/image-removebg-preview (3).png" id="5_71pa8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05x41"]
+radius = 104.145
+height = 230.303
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urblq"]
+size = Vector2(233, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysan"]
+size = Vector2(103, 276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw27f"]
+size = Vector2(221, 161.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqbix"]
+size = Vector2(144, 191.875)
+
+[node name="map" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.447059)
+offset_left = -1798.0
+offset_top = -976.0
+offset_right = 3675.0
+offset_bottom = 1903.0
+texture = ExtResource("1_wijl4")
+
+[node name="Player" parent="." instance=ExtResource("2_e0an3")]
+position = Vector2(183, 731)
+
+[node name="the homeless" type="Node2D" parent="."]
+
+[node name="Homeless person" type="StaticBody2D" parent="the homeless"]
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person"]
+position = Vector2(148, 967.25)
+scale = Vector2(0.4791, 0.549875)
+texture = ExtResource("3_urblq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person"]
+position = Vector2(166, 994)
+shape = SubResource("CapsuleShape2D_05x41")
+
+[node name="Homeless person2" type="StaticBody2D" parent="the homeless"]
+position = Vector2(180, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person2"]
+position = Vector2(274.855, 962.849)
+scale = Vector2(0.4791, 0.549875)
+texture = ExtResource("4_iw27f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person2"]
+position = Vector2(286.5, 989)
+shape = SubResource("RectangleShape2D_urblq")
+
+[node name="Homeless person3" type="StaticBody2D" parent="the homeless"]
+position = Vector2(180, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person3"]
+position = Vector2(621.855, 917.512)
+scale = Vector2(0.4791, 0.811331)
+texture = ExtResource("5_71pa8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person3"]
+position = Vector2(592.5, 932)
+shape = SubResource("RectangleShape2D_oysan")
+
+[node name="Homeless person4" type="StaticBody2D" parent="the homeless"]
+position = Vector2(917, -7)
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person4"]
+position = Vector2(148, 967.25)
+scale = Vector2(0.4791, 0.549875)
+texture = ExtResource("3_urblq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person4"]
+position = Vector2(163, 995)
+shape = SubResource("CapsuleShape2D_05x41")
+
+[node name="Homeless person5" type="StaticBody2D" parent="the homeless"]
+position = Vector2(1097, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person5"]
+position = Vector2(274.855, 962.849)
+scale = Vector2(0.4791, 0.549875)
+texture = ExtResource("4_iw27f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person5"]
+position = Vector2(292.5, 977.938)
+shape = SubResource("RectangleShape2D_iw27f")
+
+[node name="Homeless person6" type="StaticBody2D" parent="the homeless"]
+position = Vector2(1097, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="the homeless/Homeless person6"]
+position = Vector2(621.855, 970.849)
+scale = Vector2(0.4791, 0.549875)
+texture = ExtResource("5_71pa8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the homeless/Homeless person6"]
+position = Vector2(589, 983.125)
+shape = SubResource("RectangleShape2D_gqbix")
