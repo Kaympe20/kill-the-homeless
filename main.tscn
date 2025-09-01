@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb6d58q7x7mp1"]
+[gd_scene load_steps=5 format=3 uid="uid://bb6d58q7x7mp1"]
 
 [ext_resource type="Script" uid="uid://bp5ve2s2mmdc5" path="res://main_menu.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bqu8fx7eiyaiw" path="res://level_container.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cha6e40vtdy3y" path="res://assets/kill-the-homeless.png" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://2ydsx12qosp7" path="res://assets/Nitro-Fun-New-Game_Trim.mp3" id="4_1bvp3"]
 
 [node name="main" type="Node"]
 
@@ -66,6 +67,10 @@ offset_top = -231.0
 offset_right = 135.0
 offset_bottom = -186.0
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1bvp3")
+autoplay = true
 
 [connection signal="pressed" from="ui/mainMenu/VBoxContainer/Control/Button" to="ui/mainMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="ui/mainMenu/VBoxContainer/Control2/Button" to="ui/mainMenu" method="_on_quit_button_pressed"]
