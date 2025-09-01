@@ -32,13 +32,13 @@ texture = ExtResource("1_ig7tw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui/mainMenu"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 160.0
-offset_top = 231.0
-offset_right = -1575.0
-offset_bottom = -557.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -62,10 +62,10 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="ui/mainMenu/VBoxContainer/Control2"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = -231.0
-offset_right = 135.0
-offset_bottom = -186.0
+offset_left = -40.0
+offset_top = 72.0
+offset_right = 46.0
+offset_bottom = 117.0
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
